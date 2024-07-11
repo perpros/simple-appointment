@@ -5,10 +5,12 @@ class ServiceEntity {
   ServiceEntity({
     required this.name,
     this.location,
-    this.estimateTime,
+    this.timeRange,
+    this.timeRangeStep,
   });
 
   final String name;
   final LocationEntity? location;
-  final TimeRangeEntity? estimateTime;
+  final TimeRangeEntity? timeRange;
+  final TimeRangeEntity? timeRangeStep;
 }
