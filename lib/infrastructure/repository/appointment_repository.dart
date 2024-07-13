@@ -21,7 +21,7 @@ class AppointmentRepository implements IAppointmentRepository {
       fields: {"id": cancelAppointment.appointmentId},
     );
 
-    return CancelAppointmentResponse.fromMap(res);
+    return CancelAppointmentResponse.fromJson(res);
   }
 
   @override
@@ -35,7 +35,7 @@ class AppointmentRepository implements IAppointmentRepository {
       },
     );
 
-    return ManageAppointmentResponse.fromMap(res);
+    return ManageAppointmentResponse.fromJson(res);
   }
 
   @override
@@ -50,6 +50,6 @@ class AppointmentRepository implements IAppointmentRepository {
       },
     );
 
-    return BookAppointmentResponse.fromMap(res);
+    return BookAppointmentResponse.fromJson(res);
   }
 }

@@ -15,6 +15,6 @@ class ReportRepository implements IReportRepository {
       fields: {"time_range": reportByTime.timeRange.toString()},
     );
 
-    return ReportByTimeResponse.fromMap(res);
+    return ReportByTimeResponse.fromJson(res);
   }
 }
