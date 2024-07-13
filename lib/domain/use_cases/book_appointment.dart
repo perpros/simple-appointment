@@ -1,13 +1,12 @@
 import '../entities/time_range_entity.dart';
-import '../entities/user_entity.dart';
 
 class BookAppointment {
   BookAppointment({
     required this.servicetId,
-    required this.user,
+    required this.userId,
     required this.timeRange,
   });
   final String servicetId;
-  final UserEntity user;
+  final String userId;
   final TimeRangeEntity timeRange;
 }

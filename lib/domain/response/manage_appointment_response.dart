@@ -1,3 +1,8 @@
-import 'i_response_model.dart';
+class ManageAppointmentResponse {
+  ManageAppointmentResponse();
 
-class ManageAppointmentResponse implements IResponseModel {}
+  factory ManageAppointmentResponse.fromJson(Map<String, dynamic> json) =>
+      ManageAppointmentResponse();
+
+  Map<String, dynamic> toJson() => <String, dynamic>{};
+}
