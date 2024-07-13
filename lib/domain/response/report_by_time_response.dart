@@ -1,3 +1,8 @@
-import 'i_response_model.dart';
+class ReportByTimeResponse {
+  ReportByTimeResponse();
 
-class ReportByTimeResponse implements IResponseModel {}
+  factory ReportByTimeResponse.fromJson(Map<String, dynamic> json) =>
+      ReportByTimeResponse();
+
+  Map<String, dynamic> toJson() => <String, dynamic>{};
+}

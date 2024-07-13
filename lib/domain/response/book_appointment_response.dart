@@ -1,3 +1,8 @@
-import 'i_response_model.dart';
+class BookAppointmentResponse {
+  BookAppointmentResponse();
 
-class BookAppointmentResponse implements IResponseModel {}
+  factory BookAppointmentResponse.fromJson(Map<String, dynamic> json) =>
+      BookAppointmentResponse();
+
+  Map<String, dynamic> toJson() => <String, dynamic>{};
+}
