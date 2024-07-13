@@ -1,29 +1,55 @@
-import 'package:simple_appointment/entities/appointment_entity.dart';
-import 'package:simple_appointment/use_cases/repository/i_appointment_repository.dart';
-import 'package:simple_appointment/use_cases/response/reserve_appointment_response_model.dart';
-import 'package:simple_appointment/use_cases/response/manage_appointment_response_model.dart';
-import 'package:simple_appointment/use_cases/response/cancel_appointment_response_model.dart';
+import 'package:simple_appointment/domain/repository/i_appointment_repository.dart';
+import 'package:simple_appointment/domain/use_cases/manage_appointment.dart';
+import 'package:simple_appointment/domain/use_cases/cancel_appointment.dart';
+import 'package:simple_appointment/domain/use_cases/book_appointment.dart';
+import 'package:simple_appointment/domain/response/manage_appointment_response.dart';
+import 'package:simple_appointment/domain/response/cancel_appointment_response.dart';
+import 'package:simple_appointment/domain/response/book_appointment_response.dart';
 
-import '../provider/appointment_provider.dart';
+import '../interfaces/i_request_handler.dart';
 
 class AppointmentRepository implements IAppointmentRepository {
-  AppointmentRepository(this.provider);
+  AppointmentRepository(this.requestHandler);
+
+  final IRequestHandler requestHandler;
 
   @override
-  final AppointmentProvider provider;
+  Future<CancelAppointmentResponse> cancelAppointment(
+      CancelAppointment cancelAppointment) async {
+    Map<String, dynamic> res = await requestHandler.postReq(
+      url: "v1/appointment/cancel",
+      fields: {"id": cancelAppointment.appointmentId},
+    );
+
+    return CancelAppointmentResponse.fromMap(res);
+  }
 
   @override
-  CancelAppointmentResponseModel cancelAppointment(
-          AppointmentEntity appointment) =>
-      provider.cancelAppointment(appointment);
+  Future<ManageAppointmentResponse> manageAppointment(
+      ManageAppointment manageAppointment) async {
+    Map<String, dynamic> res = await requestHandler.postReq(
+      url: "v1/appointment/manage",
+      fields: {
+        "id": manageAppointment.appointmentId,
+        "time_range": manageAppointment.timeRange.toString()
+      },
+    );
+
+    return ManageAppointmentResponse.fromMap(res);
+  }
 
   @override
-  ManageAppointmentResponseModel manageAppointment(
-          AppointmentEntity appointment) =>
-      provider.manageAppointment(appointment);
+  Future<BookAppointmentResponse> bookAppointment(
+      BookAppointment bookAppointment) async {
+    Map<String, dynamic> res = await requestHandler.postReq(
+      url: "v1/appointment/book",
+      fields: {
+        "servicet_id": bookAppointment.servicetId,
+        "user_id": bookAppointment.userId,
+        "time_range": bookAppointment.timeRange.toString()
+      },
+    );
 
-  @override
-  ReserveAppointmentResponseModel reserveAppointment(
-          AppointmentEntity appointment) =>
-      provider.reserveAppointment(appointment);
+    return BookAppointmentResponse.fromMap(res);
+  }
 }

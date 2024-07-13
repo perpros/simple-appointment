@@ -1,16 +1,20 @@
-import 'package:simple_appointment/entities/time_range_entity.dart';
-import 'package:simple_appointment/use_cases/repository/i_report_repository.dart';
-import 'package:simple_appointment/use_cases/response/report_by_time_response_model.dart';
+import 'package:simple_appointment/domain/repository/i_report_repository.dart';
+import 'package:simple_appointment/domain/use_cases/report_by_time.dart';
+import 'package:simple_appointment/domain/response/report_by_time_response.dart';
 
-import '../provider/report_provider.dart';
+import '../interfaces/i_request_handler.dart';
 
 class ReportRepository implements IReportRepository {
-  ReportRepository(this.provider);
+  ReportRepository(this.requestHandler);
 
+  final IRequestHandler requestHandler;
   @override
-  final ReportProvider provider;
+  Future<ReportByTimeResponse> reportByTime(ReportByTime reportByTime) async {
+    Map<String, dynamic> res = await requestHandler.postReq(
+      url: "v1/appointment/cancel",
+      fields: {"time_range": reportByTime.timeRange.toString()},
+    );
 
-  @override
-  ReportByTimeResponseModel reportByTime(TimeRangeEntity timeRange) =>
-      provider.reportByTime(timeRange);
+    return ReportByTimeResponse.fromMap(res);
+  }
 }
