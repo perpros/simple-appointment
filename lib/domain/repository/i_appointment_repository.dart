@@ -6,8 +6,8 @@ import '../use_cases/book_appointment.dart';
 import '../use_cases/manage_appointment.dart';
 
 abstract class IAppointmentRepository {
-  Future<BookAppointmentResponse> reserveAppointment(
-      BookAppointment reserveAppointment);
+  Future<BookAppointmentResponse> bookAppointment(
+      BookAppointment bookAppointment);
 
   Future<CancelAppointmentResponse> cancelAppointment(
       CancelAppointment cancelAppointment);

@@ -6,4 +6,8 @@ class TimeRangeEntity {
 
   final String startDate;
   final String? endDate;
+
+  @override
+  String toString() =>
+      endDate != null ? startDate + " until " + endDate! : startDate;
 }
