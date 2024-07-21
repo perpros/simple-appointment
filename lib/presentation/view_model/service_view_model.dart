@@ -1,5 +1,6 @@
 class ServiceViewModel {
   ServiceViewModel(
+    this.id,
     this.name,
     this.details,
     this.description,
@@ -7,6 +8,7 @@ class ServiceViewModel {
     this.pictureUrl,
   );
 
+  final String id;
   final String name;
   final String details;
   final String description;
