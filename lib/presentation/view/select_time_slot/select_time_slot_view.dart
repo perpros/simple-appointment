@@ -15,16 +15,18 @@ class SelectTimeSlotView extends StatelessWidget {
     throw UnimplementedError();
   }
 
-  void onDateSlotSelected(List<TimeSlotViewModel> timeSlots) {
+  void _onDateSlotSelected(List<TimeSlotViewModel> timeSlots) {
     // TODO
   }
-  void onTimeSlotSelected(TimeSlotViewModel timeSlot) {
+
+  void _onTimeSlotSelected(TimeSlotViewModel timeSlot) {
     // TODO
   }
-  void onNextAvailability(DateSlotViewModel dateSlot) {
+
+  void _onNextAvailability(DateSlotViewModel dateSlot) {
     // TODO
   }
-  void onContactClinic(DateSlotViewModel dateSlot) {
+  void _onContactClinic(DateSlotViewModel dateSlot) {
     // TODO
   }
 }
