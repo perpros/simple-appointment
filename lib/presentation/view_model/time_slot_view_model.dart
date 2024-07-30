@@ -1,9 +1,9 @@
 class TimeSlotViewModel {
   TimeSlotViewModel(
-    this.startTIme,
+    this.startTime,
     this.endTime,
   );
 
-  final String startTIme;
+  final String startTime;
   final String endTime;
 }
