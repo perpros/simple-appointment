@@ -8,12 +8,12 @@ class DateSlotWidget extends StatelessWidget {
       : super(key: key);
 
   final DateSlotViewModel dateSlot;
-  final Function(DateSlotViewModel) onDateSlotSelected;
+  final Function()? onDateSlotSelected;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () => onDateSlotSelected(dateSlot),
+        onPressed: onDateSlotSelected,
         child: Text(dateSlot.date.toString().split(' ')[0]));
   }
 }

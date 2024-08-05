@@ -13,6 +13,11 @@ class TimeSlotSectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final amSlots = dateSlot.timeSlots
+        .where((TimeSlotViewModel slot) => slot.startTime.contains('am'));
+    final pmSlots = dateSlot.timeSlots
+        .where((TimeSlotViewModel slot) => slot.startTime.contains('pm'));
+
     return Column(
       children: [
         Text(dateSlot.date.toString().split(' ')[0]),
@@ -26,15 +31,14 @@ class TimeSlotSectionWidget extends StatelessWidget {
                 mainAxisSpacing: 8.0, // spacing between rows
                 crossAxisSpacing: 8.0, // spacing between columns
                 padding: const EdgeInsets.all(8.0), // padding around the grid
-                children: dateSlot.timeSlots
-                    .where((TimeSlotViewModel slot) =>
-                        slot.startTime.contains('am'))
-                    .map((timeSlot) {
-                  return ElevatedButton(
-                    onPressed: () => onTimeSlotSelected(timeSlot),
-                    child: Text(timeSlot.startTime.split('-')[0]),
-                  );
-                }).toList(),
+                children: amSlots.isEmpty
+                    ? [const Text('No slots available')]
+                    : amSlots.map((timeSlot) {
+                        return ElevatedButton(
+                          onPressed: () => onTimeSlotSelected(timeSlot),
+                          child: Text(timeSlot.startTime.split('-')[0]),
+                        );
+                      }).toList(),
               ),
             ),
           ],
@@ -49,15 +53,16 @@ class TimeSlotSectionWidget extends StatelessWidget {
                 mainAxisSpacing: 8.0, // spacing between rows
                 crossAxisSpacing: 8.0, // spacing between columns
                 padding: const EdgeInsets.all(8.0), // padding around the grid
-                children: dateSlot.timeSlots
-                    .where((TimeSlotViewModel slot) =>
-                        slot.startTime.contains('pm'))
-                    .map((timeSlot) {
-                  return ElevatedButton(
-                    onPressed: () => onTimeSlotSelected(timeSlot),
-                    child: Text(timeSlot.startTime.split('-')[0]),
-                  );
-                }).toList(),
+                children: pmSlots.isEmpty
+                    ? [const Text('No slots available')]
+                    : pmSlots.map((timeSlot) {
+                        return ElevatedButton(
+                          onPressed: () {
+                            onTimeSlotSelected(timeSlot);
+                          },
+                          child: Text(timeSlot.startTime.split('-')[0]),
+                        );
+                      }).toList(),
               ),
             ),
           ],
