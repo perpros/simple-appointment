@@ -14,6 +14,10 @@ class AppointmentBookedView extends StatelessWidget {
     throw UnimplementedError();
   }
 
-  void onView() {}
-  void onRebooking() {}
+  void _onView() {
+    // TODO
+  }
+  void _onRebooking() {
+    // TODO
+  }
 }

@@ -21,6 +21,10 @@ class FillAppointmentView extends StatelessWidget {
     throw UnimplementedError();
   }
 
-  void onNext(AppointmentForViewModel appointmentFor) {}
-  void onPatientSelected(PatientViewModel patientViewModel) {}
+  void _onNext(AppointmentForViewModel appointmentFor) {
+    // TODO
+  }
+  void _onPatientSelected(PatientViewModel patientViewModel) {
+    // TODO
+  }
 }

@@ -22,5 +22,7 @@ class ConfirmAppointmentView extends StatelessWidget {
     throw UnimplementedError();
   }
 
-  void onConfirm() {}
+  void _onConfirm() {
+    // TODO
+  }
 }
