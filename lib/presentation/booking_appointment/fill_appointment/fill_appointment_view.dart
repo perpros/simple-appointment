@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../view_model/patient_view_model.dart';
-import '../../view_model/service_view_model.dart';
-import '../../view_model/appointment_for_view_model.dart';
-import '../../widgets/service_widget.dart';
-import 'appointment_for_widget.dart';
-import 'who_is_patient_widget.dart';
+import '../view_model/patient_view_model.dart';
+import '../view_model/service_view_model.dart';
+import '../confirm_appointment/view_model/appointment_for_view_model.dart';
+import '../widget/service_widget.dart';
+import 'widget/appointment_for_widget.dart';
+import 'widget/who_is_patient_widget.dart';
 // import '../../widgets/patient_widget.dart';
 // import '../../widgets/service_widget.dart';
 // import 'appointment_for_widget.dart';

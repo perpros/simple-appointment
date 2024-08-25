@@ -1,4 +1,4 @@
-import 'appointment_for_view_model.dart';
+import '../confirm_appointment/view_model/appointment_for_view_model.dart';
 import 'service_view_model.dart';
 import 'time_slot_view_model.dart';
 

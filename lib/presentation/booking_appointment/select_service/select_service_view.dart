@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../view_model/service_view_model.dart';
+import '../view_model/service_view_model.dart';
 // import '../../widgets/search_bar_widget.dart';
 // import '../../widgets/service_widget.dart';
 

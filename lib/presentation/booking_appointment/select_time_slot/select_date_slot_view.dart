@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../view_model/date_slot_view_model.dart';
-import '../../view_model/service_view_model.dart';
-import '../../view_model/time_slot_view_model.dart';
-import '../../widgets/service_widget.dart';
-import 'date_slot_widget.dart';
-import 'no_slots_available_widget.dart';
-import 'time_slot_section_widget.dart';
+import '../view_model/date_slot_view_model.dart';
+import '../view_model/service_view_model.dart';
+import '../view_model/time_slot_view_model.dart';
+import '../widget/service_widget.dart';
+import 'widget/date_slot_widget.dart';
+import 'widget/no_slots_available_widget.dart';
+import 'widget/time_slot_section_widget.dart';
 
 class SelectDateSlotView extends StatefulWidget {
   const SelectDateSlotView(

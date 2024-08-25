@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../view_model/booked_appointment_view_model.dart';
+import '../view_model/booked_appointment_view_model.dart';
 
 class AppointmentBookedView extends StatelessWidget {
   const AppointmentBookedView({Key? key, required this.apointment})
