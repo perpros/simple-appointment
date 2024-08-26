@@ -1,5 +1,5 @@
 class ServiceViewModel {
-  ServiceViewModel(
+  const ServiceViewModel(
     this.id,
     this.name,
     this.details,
@@ -8,7 +8,7 @@ class ServiceViewModel {
     this.pictureUrl,
   );
 
-  final String id;
+  final int id;
   final String name;
   final String details;
   final String description;

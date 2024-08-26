@@ -11,18 +11,37 @@ class ServiceWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const SizedBox(width: 80, height: 80),
-        Column(
-          children: [
-            Row(
-              children: [
-                Text(service.name),
-                Text(service.stars.toString()),
-              ],
-            ),
-            Text(service.details),
-            Text(service.description),
-          ],
+        ClipRRect(
+          borderRadius: BorderRadius.circular(16.0),
+          child: Image.asset(
+            'assets/images/shape-generic.png',
+            width: 80,
+            height: 80,
+          ),
+        ),
+        const SizedBox(width: 16),
+        Flexible(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(service.name,
+                      style: Theme.of(context).textTheme.titleLarge),
+                  Text(service.stars.toString()),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(service.details),
+                  Text(service.description),
+                ],
+              ),
+            ],
+          ),
         ),
       ],
     );

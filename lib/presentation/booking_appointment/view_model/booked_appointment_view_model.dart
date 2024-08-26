@@ -3,7 +3,11 @@ import 'service_view_model.dart';
 import 'time_slot_view_model.dart';
 
 class BookedAppointmentViewModel {
-  BookedAppointmentViewModel(this.appointmentFor, this.service, this.timeSlot);
+  const BookedAppointmentViewModel(
+    this.appointmentFor,
+    this.service,
+    this.timeSlot,
+  );
 
   final AppointmentForViewModel appointmentFor;
   final ServiceViewModel service;

@@ -1,5 +1,5 @@
 class PatientViewModel {
-  PatientViewModel(
+  const PatientViewModel(
     this.name,
     this.picUrl,
   );

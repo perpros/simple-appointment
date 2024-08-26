@@ -1,5 +1,5 @@
 class TimeSlotViewModel {
-  TimeSlotViewModel(
+  const TimeSlotViewModel(
     this.startTime,
     this.endTime,
   );

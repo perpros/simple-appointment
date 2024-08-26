@@ -1,7 +1,7 @@
 import 'time_slot_view_model.dart';
 
 class DateSlotViewModel {
-  DateSlotViewModel(
+  const DateSlotViewModel(
     this.date,
     this.availableSlot,
     this.timeSlots,
