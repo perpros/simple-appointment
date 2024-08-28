@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'choose_date_slot_and_time_slot_view.dart';
 import '../view_model/service_view_model.dart';
 import '../widget/service_widget.dart';
-import 'select_service_controller.dart';
+import '../controller/service_discovery_and_selection_controller.dart';
 
-class SelectServiceView extends StatefulWidget {
-  const SelectServiceView({Key? key}) : super(key: key);
+class ServiceDiscoveryAndSelectionView extends StatefulWidget {
+  const ServiceDiscoveryAndSelectionView({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => SelectServiceState();
 }
 
-class SelectServiceState extends State<SelectServiceView> {
-  final ctrl = SelectServiceController();
+class SelectServiceState extends State<ServiceDiscoveryAndSelectionView> {
+  final ctrl = ServiceDiscoveryAndSelectionController();
   final List<ServiceViewModel> services = [];
 
   @override
@@ -61,17 +62,26 @@ class SelectServiceState extends State<SelectServiceView> {
   Widget? serviceItemBuilder(BuildContext context, int index) {
     return Padding(
       padding: const EdgeInsets.only(top: 12),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 16, right: 24, bottom: 12),
-            child: ServiceWidget(service: services[index]),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Divider(),
-          ),
-        ],
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const ChooseDateSlotAndTimeSlotView(),
+            ),
+          );
+        },
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 16, right: 24, bottom: 12),
+              child: ServiceWidget(service: services[index]),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Divider(),
+            ),
+          ],
+        ),
       ),
     );
   }

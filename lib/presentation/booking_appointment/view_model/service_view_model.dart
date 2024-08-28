@@ -1,3 +1,5 @@
+import 'date_slot_view_model.dart';
+
 class ServiceViewModel {
   const ServiceViewModel(
     this.id,
@@ -6,6 +8,7 @@ class ServiceViewModel {
     this.description,
     this.stars,
     this.pictureUrl,
+    this.dateSlots,
   );
 
   final int id;
@@ -14,4 +17,5 @@ class ServiceViewModel {
   final String description;
   final double stars;
   final String? pictureUrl;
+  final List<DateSlotViewModel> dateSlots;
 }

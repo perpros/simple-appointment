@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../view_model/date_slot_view_model.dart';
+import '../view_model/date_slot_view_model.dart';
 
 class DateSlotWidget extends StatelessWidget {
   const DateSlotWidget(

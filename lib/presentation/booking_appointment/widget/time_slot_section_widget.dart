@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../view_model/date_slot_view_model.dart';
-import '../../view_model/time_slot_view_model.dart';
+import '../view_model/date_slot_view_model.dart';
+import '../view_model/time_slot_view_model.dart';
 
 class TimeSlotSectionWidget extends StatelessWidget {
   const TimeSlotSectionWidget(
